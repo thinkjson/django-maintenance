@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>We're down for maintenance.</title>
+		<style type="text/css" media="screen">
+			body{
+				background-color: #fbfbfb;
+				font-family: "Helvetica Neue", Arial, sans-serif;
+			}
+			h1{
+				
+				line-height: 84px;
+				font-size: 84px;
+				text-transform: uppercase;
+				text-align: center;
+				color: #3e3e3e;
+				margin: 0 auto;
+				margin-top: 10%;
+			}
+			p{
+				font-size: 21px;
+			}
+			div{
+				margin: 0 auto;
+				width: 50%;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<h1>Down</h1>
+			{% for message in messages %}
+			<p>
+				{{message.message}}
+			</p>
+			{% endfor %}
+		</div>
+	</body>
+</html>
