@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<style type="text/css">
+    .message {
+        padding: 5px;
+        margin-bottom: 10px;
+        background-color: #ccc;
+    }
+</style>
+{% endblock %}
+
+{% block maincontent %}
+<p>The application is currently undergoing scheduled maintenance. Please see the messages below for more information:</p>
+{% for message in messages %}
+    <div class="message">{{ message.message }}<br />
+    Service window is between {{ message.start_time|date:"F j, Y  h:i a" }}
+        {% if message.end_time %}
+            and {{ message.end_time|date:"F j, Y  h:i a" }}
+            {% else %}
+            and unknown
+            {% endif %}
+    </div>
+{% endfor %}
+{% endblock %}
