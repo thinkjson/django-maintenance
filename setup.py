@@ -11,7 +11,7 @@ setup(
          ],
     },
     include_package_data=True,
-    version = "0.0.3a",
+    version = "0.0.3b",
     author = "Mark Cahill",
     description = ("Django middleware that allows you to perform maintenance on your application "),
     license = "BSD",
