@@ -2,13 +2,8 @@ from setuptools import setup, find_packages
 
 
 setup(
-    name = "Django Maintenance",
+    name = "django-maintenance",
     packages = ['maintenance',],
-    package_data = {
-         'maintenance': [
-                 'templates/*.html',
-             ],
-     },
     version = "0.0.2",
     author = "Andrew Carter, Jamie Curle",
     author_email = "andrewjcarter@gmail.com, me@jamiecurle.com",
