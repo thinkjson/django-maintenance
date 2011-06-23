@@ -16,7 +16,7 @@ class MaintenanceModeMiddleware(object):
         except Exception:
             return None
         if 'django.contrib.admin' not in view.__module__ and messages.count() > 0:
-            template = render_to_string('maintenance_mode/messages.html',
+            template = render_to_string('maintenance/messages.html',
             {
                 'title': 'Maintenance Mode',
                 'messages': messages
