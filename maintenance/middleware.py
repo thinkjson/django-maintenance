@@ -11,7 +11,7 @@ class MaintenanceMiddleware(object):
     def process_request(self, request):
         
         disable_for_superuser = getattr(settings, 'MAINTENANCE_DISABLE_FOR_SUPERUSER', False)
-        print disable_for_superuser
+        
         if request.user.is_superuser and disable_for_superuser:
             return None
         
