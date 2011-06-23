@@ -1,25 +1,41 @@
-{% extends 'base.html' %}
-
-{% block head %}
-<style type="text/css">
-    .message {
-        padding: 5px;
-        margin-bottom: 10px;
-        background-color: #ccc;
-    }
-</style>
-{% endblock %}
-
-{% block maincontent %}
-<p>The application is currently undergoing scheduled maintenance. Please see the messages below for more information:</p>
-{% for message in messages %}
-    <div class="message">{{ message.message }}<br />
-    Service window is between {{ message.start_time|date:"F j, Y  h:i a" }}
-        {% if message.end_time %}
-            and {{ message.end_time|date:"F j, Y  h:i a" }}
-            {% else %}
-            and unknown
-            {% endif %}
-    </div>
-{% endfor %}
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>We're down for maintenance.</title>
+		<style type="text/css" media="screen">
+			body{
+				background-color: #fbfbfb;
+				font-family: "Helvetica Neue", Arial, sans-serif;
+			}
+			h1{
+				
+				line-height: 84px;
+				font-size: 84px;
+				text-transform: uppercase;
+				text-align: center;
+				color: #3e3e3e;
+				margin: 0 auto;
+				margin-top: 10%;
+			}
+			p{
+				font-size: 21px;
+			}
+			div{
+				margin: 0 auto;
+				width: 50%;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<h1>Down</h1>
+			{% for message in messages %}
+			<p>
+				{{message.message}}
+			</p>
+			{% endfor %}
+		</div>
+	</body>
+</html>
