@@ -9,7 +9,6 @@
 				font-family: "Helvetica Neue", Arial, sans-serif;
 			}
 			h1{
-				
 				line-height: 84px;
 				font-size: 84px;
 				text-transform: uppercase;
@@ -31,10 +30,16 @@
 	<body>
 		<div>
 			<h1>Down</h1>
+			<p>The application is currently undergoing scheduled maintenance. Please see the messages below for more information:</p>
 			{% for message in messages %}
-			<p>
-				{{message.message}}
-			</p>
+			    <div class="message">{{ message.message }}<br />
+			    Service window is between {{ message.start_time|date:"F j, Y  h:i a" }}
+			        {% if message.end_time %}
+			            and {{ message.end_time|date:"F j, Y  h:i a" }}
+			            {% else %}
+			            and unknown
+			            {% endif %}
+			    </div>
 			{% endfor %}
 		</div>
 	</body>

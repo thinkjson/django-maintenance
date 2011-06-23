@@ -14,7 +14,7 @@ setup(
     version = "0.0.3b",
     author = "Mark Cahill",
     description = ("Django middleware that allows you to perform maintenance on your application "),
-    license = "BSD",
+    license = "GPL",
     url = "https://github.com/tiemonster/django-maintenance",
 
 )
