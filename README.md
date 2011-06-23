@@ -5,3 +5,10 @@ Other maintenance mode solutions for Django rely on a settings.py change, which 
 You can even schedule future maintenance windows without having to worry about manually taking down the application when maintenance becomes necessary. 
 
 Be aware however that if enabled, every request will incur one extra database query.
+
+
+## Configuration
+
+###MAINTENANCE_DISABLE_FOR_SUPERUSER
+
+If set to True then superusers will be able to access the site as normal and the middleware will have no effect.
