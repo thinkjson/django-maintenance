@@ -9,6 +9,6 @@ Be aware however that if enabled, every request will incur one extra database qu
 
 ## Configuration
 
-###MAINTENANCE_DISABLE_FOR_SUPERUSER
+### MAINTENANCE_DISABLE_FOR_SUPERUSER
 
-If set to True then superusers will be able to access the site as normal and the middleware will have no effect.
+If set to True then superusers will be able to access the site as normal and the middleware will have no effect. Default's to False.
