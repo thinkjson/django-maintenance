@@ -6,6 +6,9 @@ You can even schedule future maintenance windows without having to worry about m
 
 Be aware however that if enabled, every request will incur one extra database query unless you also enable MAINTENANCE_CACHE_MESSAGES (see below).
 
+## Setup
+
+To set this up, add `maintenance` to your INSTALLED_APPS and `maintenance.middleware.MaintenanceMiddleware` to the bottom of your MIDDLEWARE_CLASSES settings, and then run `manage.py syncdb`.
 
 ## Configuration
 
