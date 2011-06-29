@@ -13,11 +13,11 @@ class MaintenanceMiddleware(object):
         
         disable_for_superuser = getattr(settings, 'MAINTENANCE_DISABLE_FOR_SUPERUSER', False)
         
-        if getattr(settings, 'MAINTENANCE_CACHE_MESSAGES', False):
-            messages = cache.get('maintenance_messages')
-        
         if request.user.is_superuser and disable_for_superuser:
             return None
+        
+        if getattr(settings, 'MAINTENANCE_CACHE_MESSAGES', False):
+            messages = cache.get('maintenance_messages')
         
         if not messages:
             messages = MaintenanceMessage.objects.filter(start_time__lt=datetime.now())\
